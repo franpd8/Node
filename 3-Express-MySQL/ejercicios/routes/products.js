@@ -8,24 +8,18 @@ const ProductController = require("../controllers/ProductController");
 // crear tabla productos
 router.get("/createTable", ProductController.create);
 // Añadir un producto a la tabla
-router.post("/newProduct", ProductController.add);
-
+router.post("/add", ProductController.add);
 // mostrar todos los productos
-router.get("/allProducts", ProductController.showAll);
-
+router.get("/showAll", ProductController.showAll);
 // mostrar todos los productos descendiente
-router.get("/allProductsDesc", ProductController.showAllDesc);
-
+router.get("/showAllDesc", ProductController.showAllDesc);
 // Buscar un producto por ID
-router.get("/searchProduct/id/:id", ProductController.searchById);
-
+router.get("/search/id/:id", ProductController.searchById);
 //Buscar un producto por su nombre
-router.get("/searchProduct/name/:name", ProductController.searchByName);
-
+router.get("/search/name/:name", ProductController.searchByName);
 // Actualizar un producto por ID
-router.put("/updateProduct/id/:id", ProductController.updateById);
-
+router.put("/update/id/:id", ProductController.updateById);
 //  Eliminar un producto por ID
-router.delete("/deleteProduct/:id", ProductController.deteleById);
+router.delete("/delete/id/:id", ProductController.deteleById);
 
 module.exports = router;
