@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 8080
-// 21. añadimos a posteri la base de datos que esta en config
-const db = require('./config/database.js');
-const router = express.Router();
+// // 21. añadimos a posteri la base de datos que esta en config
+// const db = require('./config/database.js');
+// const router = express.Router();
 
 // const mysql = require("mysql2");
 app.use(express.json()); 
