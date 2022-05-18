@@ -10,6 +10,8 @@ app.use(express.json());
 
 // 22.importamos routes de productos
 app.use('/products', require('./routes/products'));
+app.use('/categories', require('./routes/categories'));
+app.use('/products_has_categories', require('./routes/products_has_categories'));
 
 
 // 1. conectar base de datos

@@ -1,6 +1,6 @@
 const db = require('../config/database.js');
 
-const PostController = {
+const Products_has_categoriesController = {
     create(req,res){
         let post = {title:req.body.title, body:req.body.body};
         let sql = 'INSERT INTO posts SET ?'
@@ -12,4 +12,4 @@ const PostController = {
       }
 }
 
-module.exports = PostController;
+module.exports = Products_has_categoriesController;

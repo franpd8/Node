@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../config/database.js');
+const Products_has_categoriesController = require('../controllers/Product_has_CategoryController')
+
 
 // crear tabla
 router.get("/createTableProducts_has_Categories", (req, res) => {
