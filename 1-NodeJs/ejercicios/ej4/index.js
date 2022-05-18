@@ -6,7 +6,7 @@ const fs = require("fs");
 http.createServer((req, res) => {
     const q = url.parse(req.url, true);
     const filename = "./pages" + q.pathname + ".html";
-    console.log(filename,"esta es la filename")
+    // console.log(filename,"esta es la filename con la que interactuamos")
     fs.readFile(filename, (err, data) => {
       try {
         res.writeHead(200, { "Content-Type": "text/html" });
