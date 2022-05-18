@@ -108,6 +108,16 @@ app.get('/allProducts',(req,res)=> {
       res.send(result)
     })
   })
+
+
+//   9.5 Mostrar todos los productos de la tabla products descenciente
+app.get('/allProductsDesc',(req,res)=> {
+    let sql = 'SELECT * FROM products ORDER BY id DESC';
+    db.query(sql,(err,result)=> {
+      if(err) throw err;
+      res.send(result)
+    })
+  })
 //   10. Mostrar todos los generos de la tabla categories.
 app.get('/allGenres',(req,res)=> {
     let sql = 'SELECT * FROM categories';
@@ -119,6 +129,15 @@ app.get('/allGenres',(req,res)=> {
 //   11. Mostrar todas las relaciones entre producto y categoria.
 app.get('/allRelationships',(req,res)=> {
     let sql = 'SELECT * FROM products_has_categories';
+    db.query(sql,(err,result)=> {
+      if(err) throw err;
+      res.send(result)
+    })
+  })
+
+//   11.5 Mostrar todos los productos con sus categorias.
+app.get('/showAll',(req,res)=> {
+    let sql = 'SELECT products.name, categories.genre FROM products_has_categories INNER JOIN products ON products_has_categories.product_id = products.id INNER JOIN categories ON products_has_categories.category_id = categories.id;';
     db.query(sql,(err,result)=> {
       if(err) throw err;
       res.send(result)
